@@ -27,3 +27,11 @@ services:
       - 3002
     ports:
       - 3002:3002
+
+  zpi-twitt-analysis:
+    image: zpitwitteranalysis.jfrog.io/zpi/zpi-analysis-service:latest
+    container_name: twitt-analysis
+    expose:
+      - 8003
+    ports:
+      - 8003:8003
