@@ -1,18 +1,10 @@
 version: "3.7"
 
 
-services:
-
-  mysql:
-    image: mysql:latest
-    environment:
-      - DATABASE_URL="mysql://userservice:userservice123@db4free.net:3306/userservicezpi"
-      
+services:   
   zpi-tt-client:
     image: zpitwitteranalysis.jfrog.io/zpi/zpi-twitter-client:latest
     container_name: client
-    expose:
-      - 3001
     ports:
       - 3001:3001
 
@@ -21,8 +13,6 @@ services:
     container_name: data-provider
     command: npm start
     working_dir: /app
-    expose:
-      - 3000
     ports:
       - 3000:3000
 
@@ -30,14 +20,12 @@ services:
     image: zpitwitteranalysis.jfrog.io/zpi/zpi-user-service:latest
     container_name: user-service
     expose:
-      - 3002
+      - 8080
     ports:
-      - 3002:3002
+      - 8080:80
 
   zpi-twitt-analysis:
     image: zpitwitteranalysis.jfrog.io/zpi/zpi-analysis-service:latest
     container_name: twitt-analysis
-    expose:
-      - 8003
     ports:
       - 8003:8003
