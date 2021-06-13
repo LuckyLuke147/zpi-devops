@@ -2,6 +2,12 @@ version: "3.7"
 
 
 services:
+
+  mysql:
+    image: mysql:latest
+    environment:
+      - DATABASE_URL="mysql://userservice:userservice123@db4free.net:3306/userservicezpi"
+      
   zpi-tt-client:
     image: zpitwitteranalysis.jfrog.io/zpi/zpi-twitter-client:latest
     container_name: client
