@@ -29,3 +29,10 @@ services:
     container_name: twitt-analysis
     ports:
       - 8003:8003
+
+  zpi-gateway:
+    image: zpitwitteranalysis.jfrog.io/zpi/spring-cloud-gateway:latest
+    container_name: gateway
+    ports:
+      - 8081:8081
+    
